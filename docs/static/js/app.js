@@ -1,4 +1,4 @@
-let url ="https://raw.githubusercontent.com/ERIDEZ/plotly-challenge/master/static/samples.json";
+let jsonfile ="./static/samples.json"
 
 var trace1 = {
   x: [],
@@ -44,7 +44,7 @@ function handleSubmit() {
 
 function PoblateDropDown(){
 
-  d3.json(url).then(function(data){
+  d3.json(jsonfile).then(function(data){
 
     let names = Object.values(data.names);
 
@@ -60,7 +60,7 @@ function PoblateDropDown(){
 function UpdatePlot() {
 
   // UPDATE BAR PLOT //
-  d3.json(url).then(function(data){
+  d3.json(jsonfile).then(function(data){
 
     let total_samples = Object.values(data.samples);
     let selection = d3.select("#selDataset").property("value");
